@@ -1,23 +1,76 @@
 aid: besample
+
 name: Besample
-description: 'Besample is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://besample.app/og/home.png
+
+description: Besample provides access to vetted research participants across emerging markets, enabling behavioral scientists to conduct studies
+  globally. The platform offers a searchable database of participants from Africa, Asia, Latin America, and Eastern Europe, with tools for recruitment,
+  consent, and data collection, supporting academic and commercial research initiatives.
+
 url: https://raw.githubusercontent.com/api-evangelist/besample/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-27 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-27'
+
 modified: '2026-09-27'
+
 tags:
 - Company
-apis: []
+- Research
+- Participants
+- BehavioralScience
+- DataPlatform
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: LLMsTxt
+  url: llms/besample-llms.txt
+- type: Hosts
+  url: hosts/besample-hosts.yml
+- type: DomainSecurity
+  url: security/besample-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://besample.app
+- type: Documentation
+  url: https://besample.app/resources
+- type: Blog
+  url: https://blog.besample.app/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/besample/
+
+apis:
+- name: Besample API
+  description: Provides access to vetted research participants across emerging markets via a RESTful API.
+  humanURL: https://besample.app/resources
+  baseURL: null
+  aid: besample:besample-api
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: Documentation pages are served as markdown but require JavaScript rendering to access full content, preventing machine-readable contract
+    discovery.
+  evidence:
+  - url: https://besample.app/resources
+    status: 200
+  checked: '2026-09-27'
+x-enrichment:
+  date: '2026-09-27'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
